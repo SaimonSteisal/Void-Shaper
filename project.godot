@@ -1,0 +1,27 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Pattern Generator"
+run/main_scene="res://addons/pattern_generator/gui/pattern_editor.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+
+[autoload]
+
+PatternGenerator="*res://addons/pattern_generator/pattern_generator.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/pattern_generator/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="forward_plus"
