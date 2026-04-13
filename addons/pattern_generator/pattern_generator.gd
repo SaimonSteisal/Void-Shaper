@@ -8,6 +8,12 @@ var animation_generator: AnimationTextureGenerator
 var tileset_exporter: TilesetExporter
 var atlas_exporter: AtlasExporter
 
+# Пути к скриптам
+const TEXTURE_GENERATOR_SCRIPT = preload("res://addons/pattern_generator/core/texture_generator.gd")
+const ANIMATION_GENERATOR_SCRIPT = preload("res://addons/pattern_generator/core/animation_generator.gd")
+const TILESET_EXPORTER_SCRIPT = preload("res://addons/pattern_generator/export/tileset_exporter.gd")
+const ATLAS_EXPORTER_SCRIPT = preload("res://addons/pattern_generator/export/atlas_exporter.gd")
+
 func _enter_tree():
 	_initialize_generators()
 
@@ -20,10 +26,10 @@ func _exit_tree():
 
 func _initialize_generators():
 	"""Инициализация всех генераторов"""
-	texture_generator = PatternTextureGenerator.new()
-	animation_generator = AnimationTextureGenerator.new(texture_generator)
-	tileset_exporter = TilesetExporter.new()
-	atlas_exporter = AtlasExporter.new()
+	texture_generator = TEXTURE_GENERATOR_SCRIPT.new()
+	animation_generator = ANIMATION_GENERATOR_SCRIPT.new(texture_generator)
+	tileset_exporter = TILESET_EXPORTER_SCRIPT.new()
+	atlas_exporter = ATLAS_EXPORTER_SCRIPT.new()
 
 # ========== БЫСТРЫЕ МЕТОДЫ ГЕНЕРАЦИИ ==========
 
