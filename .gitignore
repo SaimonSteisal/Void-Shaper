@@ -1,0 +1,44 @@
+```
+# Godot-specific ignores
+*.import
+*.uid
+export_presets.cfg
+.autoload_singleton.gd
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+*.ilk
+
+# Dependencies
+addons/*/build/
+addons/*/.build/
+addons/*/node_modules/
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Logs
+*.log
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Environment variables
+.env
+.env.local
+*.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+```

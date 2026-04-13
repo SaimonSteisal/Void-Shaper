@@ -1,0 +1,234 @@
+[gd_scene load_steps=2 format=3 uid="uid://pattern_editor"]
+
+[ext_resource type="Script" path="res://addons/pattern_generator/gui/pattern_editor.gd" id="1_script"]
+
+[node name="PatternEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LeftPanel" type="VBoxContainer" parent="VBoxContainer/HSplitContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="General" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/General"]
+layout_mode = 2
+text = "General Settings"
+horizontal_alignment = 1
+
+[node name="PatternName" type="LineEdit" parent="VBoxContainer/HSplitContainer/LeftPanel/General"]
+layout_mode = 2
+placeholder_text = "Pattern name..."
+
+[node name="TileSizeLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/General"]
+layout_mode = 2
+text = "Tile Size:"
+
+[node name="TileSize" type="SpinBox" parent="VBoxContainer/HSplitContainer/LeftPanel/General"]
+layout_mode = 2
+min_value = 8.0
+max_value = 64.0
+step = 8.0
+value = 16.0
+
+[node name="SeedLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/General"]
+layout_mode = 2
+text = "Seed:"
+
+[node name="SeedValue" type="SpinBox" parent="VBoxContainer/HSplitContainer/LeftPanel/General"]
+layout_mode = 2
+min_value = -1000000.0
+max_value = 1000000.0
+step = 1.0
+value = 42.0
+
+[node name="Colors" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/Colors"]
+layout_mode = 2
+text = "Colors"
+horizontal_alignment = 1
+
+[node name="PrimaryLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/Colors"]
+layout_mode = 2
+text = "Primary:"
+
+[node name="PrimaryColor" type="ColorPickerButton" parent="VBoxContainer/HSplitContainer/LeftPanel/Colors"]
+layout_mode = 2
+color = Color(0.42, 0.48, 0.44, 1)
+
+[node name="SecondaryLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/Colors"]
+layout_mode = 2
+text = "Secondary:"
+
+[node name="SecondaryColor" type="ColorPickerButton" parent="VBoxContainer/HSplitContainer/LeftPanel/Colors"]
+layout_mode = 2
+color = Color(0.29, 0.33, 0.41, 1)
+
+[node name="AccentLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/Colors"]
+layout_mode = 2
+text = "Accent:"
+
+[node name="AccentColor" type="ColorPickerButton" parent="VBoxContainer/HSplitContainer/LeftPanel/Colors"]
+layout_mode = 2
+color = Color(0.55, 0.62, 0.51, 1)
+
+[node name="NoiseSettings" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/NoiseSettings"]
+layout_mode = 2
+text = "Noise Settings"
+horizontal_alignment = 1
+
+[node name="ScaleLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/NoiseSettings"]
+layout_mode = 2
+text = "Scale: 0.80"
+
+[node name="ScaleSlider" type="HSlider" parent="VBoxContainer/HSplitContainer/LeftPanel/NoiseSettings"]
+layout_mode = 2
+min_value = 0.1
+max_value = 3.0
+step = 0.05
+value = 0.8
+
+[node name="OctavesLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/NoiseSettings"]
+layout_mode = 2
+text = "Octaves:"
+
+[node name="OctavesSlider" type="HSlider" parent="VBoxContainer/HSplitContainer/LeftPanel/NoiseSettings"]
+layout_mode = 2
+min_value = 1.0
+max_value = 6.0
+step = 1.0
+value = 2.0
+
+[node name="PersistenceLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/NoiseSettings"]
+layout_mode = 2
+text = "Persistence:"
+
+[node name="PersistenceSlider" type="HSlider" parent="VBoxContainer/HSplitContainer/LeftPanel/NoiseSettings"]
+layout_mode = 2
+min_value = 0.1
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="Rules" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/Rules"]
+layout_mode = 2
+text = "Rules"
+horizontal_alignment = 1
+
+[node name="MosaicCheck" type="CheckBox" parent="VBoxContainer/HSplitContainer/LeftPanel/Rules"]
+layout_mode = 2
+text = "Mosaic Effect"
+
+[node name="MosaicSizeLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/Rules"]
+layout_mode = 2
+text = "Cell Size:"
+
+[node name="MosaicSize" type="HSlider" parent="VBoxContainer/HSplitContainer/LeftPanel/Rules"]
+layout_mode = 2
+min_value = 2.0
+max_value = 8.0
+step = 1.0
+value = 4.0
+
+[node name="EdgeDetectionCheck" type="CheckBox" parent="VBoxContainer/HSplitContainer/LeftPanel/Rules"]
+layout_mode = 2
+text = "Edge Detection"
+
+[node name="EdgeThresholdLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel/Rules"]
+layout_mode = 2
+text = "Threshold:"
+
+[node name="EdgeThreshold" type="HSlider" parent="VBoxContainer/HSplitContainer/LeftPanel/Rules"]
+layout_mode = 2
+min_value = 0.1
+max_value = 0.5
+step = 0.05
+value = 0.3
+
+[node name="PatternListLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+text = "Saved Patterns:"
+
+[node name="PatternList" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/HSplitContainer/LeftPanel/Buttons"]
+layout_mode = 2
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="VBoxContainer/HSplitContainer/LeftPanel/Buttons"]
+layout_mode = 2
+text = "Load"
+
+[node name="GenerateButton" type="Button" parent="VBoxContainer/HSplitContainer/LeftPanel/Buttons"]
+layout_mode = 2
+text = "Regenerate"
+
+[node name="ExportButton" type="Button" parent="VBoxContainer/HSplitContainer/LeftPanel/Buttons"]
+layout_mode = 2
+text = "Export PNG"
+
+[node name="CreateDefaultsButton" type="Button" parent="VBoxContainer/HSplitContainer/LeftPanel/Buttons"]
+layout_mode = 2
+text = "Create Defaults"
+
+[node name="MessageLabel" type="Label" parent="VBoxContainer/HSplitContainer/LeftPanel"]
+layout_mode = 2
+visible = false
+text = "Message"
+horizontal_alignment = 1
+
+[node name="RightPanel" type="VBoxContainer" parent="VBoxContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Preview" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/RightPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer/RightPanel/Preview"]
+layout_mode = 2
+text = "Preview"
+horizontal_alignment = 1
+
+[node name="PreviewTexture" type="TextureRect" parent="VBoxContainer/HSplitContainer/RightPanel/Preview"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stretch_mode = 1
